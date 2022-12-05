@@ -1,2 +1,5 @@
+lista = ["PEDRO", "MARIA", "JÃO", "JOSÉ"]
+lista.append("NETO")
 
-print("Hello word")
+for i in range(0, 5, 1):
+    print(lista[i])
