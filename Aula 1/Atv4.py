@@ -9,10 +9,10 @@ answer = False
 while answer == False:
     putPassword = int(input("Digite a senha:"))
     if putPassword == password:
-        print("Senha correta.")
+        print("Acesso permitido.")
         answer = True
     else:
-        print("Senha incorreta.")
+        print("Senha inválida.")
     
 
     
