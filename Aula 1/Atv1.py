@@ -10,5 +10,5 @@ numerosPares = 0
 for x in valores:
     if x % 2 == 0:
         numerosPares += 1
-print(numerosPares)
+print(f"A quantidade de números pares é {numerosPares}")
         
