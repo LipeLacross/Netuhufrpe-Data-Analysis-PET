@@ -6,7 +6,7 @@ def valorPagamento(value, days):
         return value
     else:
         fees = 0.1 * days
-        feesINSS = value + (((3 + fees)  * value)/100) 
+        feesINSS = value + (((3 + fees)  * value) / 100) 
         return feesINSS 
 
 totalpayment = 0
@@ -19,6 +19,6 @@ while True:
     totalpayment += valorPagamento(cashInput, daysInput)
     iterator += 1
 
-print(f"Quantidade total de prestações: { iterator}")
+print(f"Quantidade total de prestações: {iterator}")
 print(f"Valor total das prestações: {totalpayment}")
 
