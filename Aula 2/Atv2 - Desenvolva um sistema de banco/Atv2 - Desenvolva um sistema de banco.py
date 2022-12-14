@@ -64,14 +64,20 @@ while escolha > 0 or escolha < 0:
         print("Consultando Saldo...")
         numConta = int(input("digite o numero da conta:"))
         saldo = bancoLacross.consultaSaldo(numConta)
-        print("o saldo da conta", numConta, "é", saldo, "R$")
+        if saldo == False:
+            print("Conta não encontrada.")
+        else:
+            print("o saldo da conta", numConta, "é", saldo, "R$")
     elif escolha == 3:
         # depositar para uma conta
         print("Depositando Conta...")
         numConta = int(input("digite o numero da conta:"))
         valor = int(input("digite o valor que deseja depositar:"))
         saldo = bancoLacross.depositar(numConta, valor)
-        print("Valor Depositado")
+        if saldo == False:
+            print("Conta não encontrada.")
+        else:
+            print("Valor Depositado")
     elif escolha == 4:
         # sacar de uma conta
         print("Sacando da Conta...")
@@ -90,15 +96,16 @@ while escolha > 0 or escolha < 0:
         if resp:
             print("Poupanca com novo saldo")
         else:
-            print("A conta não é poupanca ou não existe")
+            print("Conta não encontrada ou a conta não é poupança.")
     elif escolha == 6:
+        # render bonificada
         print("Rendendo bônus...")
         numConta = int(input("digite o numero da conta bonificada:"))
         resp = bancoLacross.renderBonus(numConta)
         if resp:
             print("Um valor bônus foi adicionado ao saldo da conta")
         else:
-            print("A conta não é bonificada ou não existe")
+            print("Conta não encontrada ou a conta não é bonificada.")
     else:
         print("Escolha inválida")
     
