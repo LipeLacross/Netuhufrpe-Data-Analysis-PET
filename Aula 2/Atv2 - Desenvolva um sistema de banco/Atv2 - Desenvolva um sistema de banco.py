@@ -1,4 +1,4 @@
-'''Desenvolva um sistema de banco, onde um banco pode ter até 100 contas. Ele deve ser capaz de criar e desativar uma conta. E ainda, realizar depósitos e saques nestas contas.
+'''Desenvolva um sistema de banco, onde um banco pode ter até 1000 contas. Ele deve ser capaz de criar e desativar uma conta. E ainda, realizar depósitos e saques nestas contas.
 A interação deve ser feita por linha de texto:
 Criar conta - solicita as informações do cliente
 Desativar conta - solicita o numero da conta
@@ -32,20 +32,33 @@ print("2 - Consultar Saldo Conta")
 print("3 - Depositar na Conta")
 print("4 - Sacar na Conta")
 print("5 - Render Poupanca")
+print("6 - Render Bonificada")
 escolha = int(input("digite a opção desejada:"))
 
-while escolha > 0:
+while escolha > 0 or escolha < 0:
     if escolha == 1:
         # criar uma conta
         print("Criando Conta...")
         print("1 - Conta Corrente")
         print("2 - Conta Poupanca")
+        print("3 - Conta Bonificada")
         opcao = int(input("digite o tipo da conta:"))
-        if opcao == 1:
-            numConta = bancoLacross.criarConta()
-        else:
-            numConta = bancoLacross.criarPoupanca()
-        print("Conta criada:", numConta)
+        while opcao > 0 or opcao < 4:
+            if opcao == 1:
+                numConta = bancoLacross.criarConta()
+                print("Conta criada:", numConta)
+                break
+            elif opcao == 2:
+                numConta = bancoLacross.criarPoupanca()
+                print("Conta criada:", numConta)
+                break
+            elif opcao == 3:
+                numConta = bancoLacross.criarBonificada()
+                print("Conta criada:", numConta)
+                break
+            else:
+                print("Número inválido.")
+                opcao = int(input("digite o tipo da conta:"))
     elif escolha == 2:
         # consultar saldo
         print("Consultando Saldo...")
@@ -78,4 +91,25 @@ while escolha > 0:
             print("Poupanca com novo saldo")
         else:
             print("A conta não é poupanca ou não existe")
+    elif escolha == 6:
+        print("Rendendo bônus...")
+        numConta = int(input("digite o numero da conta bonificada:"))
+        resp = bancoLacross.renderBonus(numConta)
+        if resp:
+            print("Um valor bônus foi adicionado ao saldo da conta")
+        else:
+            print("A conta não é bonificada ou não existe")
+    else:
+        print("Escolha inválida")
+    
+    print("====================================")
+    print("Menu")
+    print("0 - Sair")
+    print("1 - Criar uma Nova Conta")
+    print("2 - Consultar Saldo Conta")
+    print("3 - Depositar na Conta")
+    print("4 - Sacar na Conta")
+    print("5 - Render Poupanca")
+    print("6 - Render Bonificada")
     escolha = int(input("digite a opção desejada:"))
+    
