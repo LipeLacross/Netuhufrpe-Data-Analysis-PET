@@ -7,14 +7,19 @@ def findPairsList(array):
     for i in range(0, len(array), 1):
         if  array[i] % 2 == 0:
             pairsList.append(array[i])
-    return pairsList
+    return str(pairsList)
 
 def findOddList(array):
     oddList = []
     for i in range(0, len(array), 1):
         if  array[i] % 2 != 0:
             oddList.append(array[i])
-    return oddList
+    return str(oddList)
+
+with open("Pares.txt", "w") as p:
+    p.writelines(findPairsList(list))
+with open("Ímpares.txt", "w") as p:
+    p.writelines(findOddList(list))    
 
 print(findPairsList(list))
 print(findOddList(list))
