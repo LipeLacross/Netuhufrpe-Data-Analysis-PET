@@ -1,6 +1,7 @@
 '''Faça um programa que leia as coordenadas de um ponto e em seguida mostre a qual quadrante esse ponto pertence
 
 Em seguida, leia as coordenadas de mais cinco pontos e apresenta a distância entre ele e o primeiro ponto lido.'''
+#Versão procedural
 
 def readCoordinates(x1, x2, y1, y2):
     dif1 = (x2 - x1) ** 2

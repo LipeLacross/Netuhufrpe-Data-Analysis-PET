@@ -44,17 +44,18 @@ class Banco():
         return self.nome
 
     def criarConta(self):
-        num = random.randint(1, 1000)
-        verificar = self.buscarConta(num)
-        while verificar == False:
-            c = Conta(num)
-            self.contas.append(c)
-            return num
+        num = random.randint(0, 1000)
+        c = Conta(num)
+        self.contas.append(c)
+        return num
 
     def criarPoupanca(self):
         num = random.randint(1001, 2000)
         verificar = self.buscarConta(num)
-        while verificar == False:
+        while verificar == True:
+            num = random.randint(1001, 2000)
+            verificar = self.buscarConta(num)
+        if verificar == False:
             p = Poupanca(num)
             self.contas.append(p)
             return num
@@ -62,7 +63,10 @@ class Banco():
     def criarBonificada(self):
         num = random.randint(2001, 3000)
         verificar = self.buscarConta(num)
-        while verificar == False:
+        while verificar == True:
+            num = random.randint(2001, 3000)
+            verificar = self.buscarConta(num)
+        if verificar == False:
             b = Bonificada(num)
             self.contas.append(b)
             return num
@@ -71,18 +75,20 @@ class Banco():
         for i in self.contas:
             if i.numero == numConta:
                 return i.saldo
-        return False
+        return -1
 
     def depositar(self, numConta, valor):
         for i in self.contas:
             if i.numero == numConta:
                 return i.deposite(valor)
         return False
+    
     def sacar(self, numConta, valor):
         for i in self.contas:
             if i.numero == numConta:
                 return i.sacar(valor)
         return False
+    
     def renderPoupanca(self, numConta):
         for i in self.contas:
             if i.numero == numConta and isinstance(i, Poupanca):
@@ -101,5 +107,11 @@ class Banco():
         for i in self.contas:
             if i.numero == numConta:
                 return True
-        else:
-            return False
+        return False
+    
+    def excluirConta(self, numConta):
+        for i in self.contas:
+            if i.numero == numConta:
+                i = None
+                return True
+        return False

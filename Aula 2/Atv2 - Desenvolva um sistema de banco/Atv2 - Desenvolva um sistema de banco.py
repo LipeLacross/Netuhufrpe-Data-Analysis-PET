@@ -22,18 +22,22 @@ Somente a classe ContaBonificada pode acumula o bônus
 '''
 from Atv2lib import Banco
 
+def imprimirMenu():
+    print("Menu")
+    print("0 - Sair")
+    print("1 - Criar uma Nova Conta")
+    print("2 - Consultar Saldo Conta")
+    print("3 - Depositar na Conta")
+    print("4 - Sacar na Conta")
+    print("5 - Render Poupanca")
+    print("6 - Render Bonificada")
+    print("7 - Excluir Conta")
+    choice = int(input("digite a opção desejada:"))
+    return choice
+
 print("Bem-vindo")
 bancoLacross = Banco("Lacross")
-
-print("Menu")
-print("0 - Sair")
-print("1 - Criar uma Nova Conta")
-print("2 - Consultar Saldo Conta")
-print("3 - Depositar na Conta")
-print("4 - Sacar na Conta")
-print("5 - Render Poupanca")
-print("6 - Render Bonificada")
-escolha = int(input("digite a opção desejada:"))
+escolha = imprimirMenu()
 
 while escolha > 0 or escolha < 0:
     if escolha == 1:
@@ -43,7 +47,7 @@ while escolha > 0 or escolha < 0:
         print("2 - Conta Poupanca")
         print("3 - Conta Bonificada")
         opcao = int(input("digite o tipo da conta:"))
-        while opcao > 0 or opcao < 4:
+        while opcao > 1 or opcao < 4:
             if opcao == 1:
                 numConta = bancoLacross.criarConta()
                 print("Conta criada:", numConta)
@@ -64,10 +68,10 @@ while escolha > 0 or escolha < 0:
         print("Consultando Saldo...")
         numConta = int(input("digite o numero da conta:"))
         saldo = bancoLacross.consultaSaldo(numConta)
-        if saldo == False:
+        if saldo == -1:
             print("Conta não encontrada.")
         else:
-            print("o saldo da conta", numConta, "é", saldo, "R$")
+            print("o saldo da conta", numConta, "é", saldo, "R$.")
     elif escolha == 3:
         # depositar para uma conta
         print("Depositando Conta...")
@@ -77,7 +81,7 @@ while escolha > 0 or escolha < 0:
         if saldo == False:
             print("Conta não encontrada.")
         else:
-            print("Valor Depositado")
+            print("Valor Depositado.")
     elif escolha == 4:
         # sacar de uma conta
         print("Sacando da Conta...")
@@ -103,20 +107,20 @@ while escolha > 0 or escolha < 0:
         numConta = int(input("digite o numero da conta bonificada:"))
         resp = bancoLacross.renderBonus(numConta)
         if resp:
-            print("Um valor bônus foi adicionado ao saldo da conta")
+            print("Um valor bônus foi adicionado ao saldo da conta.")
         else:
             print("Conta não encontrada ou a conta não é bonificada.")
+    elif escolha == 7:
+        # Excluir conta
+        print("Iniciando exclusão...")
+        numConta = int(input("digite o numero da conta:"))
+        resp = bancoLacross.excluirConta(numConta)
+        if resp:
+            print("A conta foi excluída com sucesso.")
+        else:
+            print("A conta não existe.")       
     else:
         print("Escolha inválida")
     
-    print("====================================")
-    print("Menu")
-    print("0 - Sair")
-    print("1 - Criar uma Nova Conta")
-    print("2 - Consultar Saldo Conta")
-    print("3 - Depositar na Conta")
-    print("4 - Sacar na Conta")
-    print("5 - Render Poupanca")
-    print("6 - Render Bonificada")
-    escolha = int(input("digite a opção desejada:"))
+    escolha = imprimirMenu()
     
