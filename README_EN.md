@@ -53,4 +53,54 @@ The project is organized as follows:
 - **Atv2 - Desenvolva um sistema de banco.py**: Implementation of a simple banking system.
 - **Atv2lib.py**: Auxiliary library for the banking system.
 
-### Lesson
+### Lesson 3
+
+- **Atividade SQLite**: Activities related to the use of SQLite.
+- **Atividade mySQL**: Activities related to the use of MySQL.
+- **Init SQLite.py**: Initialization of the SQLite database.
+- **Init mySQL.py**: Initialization of the MySQL database.
+- **Outro Teste SQLite.py**: Additional tests for SQLite.
+- **Teste SQLite.py**: Basic test for SQLite.
+- **Teste pickle.py**: Serialization test with pickle.
+
+### Lesson 4
+
+**Part 1**
+
+- **BancoLib.py**: Library for banking operations.
+- **ExemploFormatAndDictionary.py**: Examples of formatting and using dictionaries.
+- **main.py**: Main script for Part 1.
+
+**Part 2**
+
+- **BeloJardim.py**: Data analysis on Belo Jardim.
+- **Estatistica1.py**: Examples of statistical analysis.
+- **Estatistica2.py**: More examples of statistical analysis.
+- **Estatistica3.py**: Advanced examples of statistical analysis.
+- **NumPyExemplo.py**: Examples of using the NumPy library.
+- **Atividade - 5 Avaliações.py**: Activity involving five evaluations.
+
+- **.gitignore**: File to ignore files and folders in version control.
+- **LICENSE**: Project license file.
+- **README.md**: README document with project information.
+- **meu_bancoSQL.db**: SQLite database.
+
+## 🛠️ Running the Project
+
+1. **Install Dependencies:** Make sure you have Python and the necessary libraries installed. It may be useful to create a virtual environment and install dependencies using `pip`.
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+2. **Run Scripts:** Navigate to the project directory and run the Python scripts as needed. For example, to run `main.py`:
+
+    ```bash
+    python main.py
+    ```
+
+3. **Databases:** To interact with the databases, use the initialization files (`Init SQLite.py`, `Init mySQL.py`) and follow the instructions in the scripts.
+
+## 🌐 Deployment
+
+The project does not have a specific deployment process as it primarily consists of scripts and activities for study. However, you can set up a local development environment following the instructions above and run the scripts as needed for practicing and analyzing data.
