@@ -1,3 +1,5 @@
+## 🌐 [English Version of README](README_EN.md)
+
 # Curso de Análise de Dados
 
 Este projeto visa fornecer uma coleção de scripts e atividades relacionadas à análise de dados, utilizando Python e bancos de dados. O projeto inclui exercícios práticos e arquivos de dados que são utilizados para demonstrar e praticar conceitos importantes em análise e manipulação de dados.
